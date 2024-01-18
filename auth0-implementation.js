@@ -23,3 +23,13 @@ const updateUI = async () => {
 window.onload = async () => {
     await configureAuth0();
 };
+document.addEventListener('DOMContentLoaded', function () {
+    const loginBtn = document.getElementById('auth0-login-button');
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function () {
+            auth0.loginWithRedirect({
+                // Your Auth0 parameters
+            });
+        });
+    }
+});
